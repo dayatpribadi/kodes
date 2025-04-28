@@ -318,7 +318,6 @@
                                 class="h-[44px] rounded-md text-black dark:text-white bg-gray-50 dark:bg-[#0a0e19] px-[17px] block w-full outline-0 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                                 placeholder="Cari berdasarkan kriteria">
                         </div>
-
                         <div>
                             <select
                                 class="h-[44px] rounded-md bg-gray-50 dark:bg-[#0a0e19] px-[13px] block w-full outline-0 cursor-pointer">
@@ -345,7 +344,7 @@
 
                         <div>
                             <button
-                                class="block w-full text-center py-[10px] px-[30px] bg-primary-500 text-white transition-all hover:bg-primary-400 rounded-md border border-primary-500 hover:border-primary-400"
+                                class="block w-full text-center py-[10px] px-[30px] bg-secondary-500 text-white transition-all hover:bg-secondary-400 rounded-md border border-secondary-500 hover:border-secondary-400"
                                 type="button">
                                 Terapkan Pencarian
                             </button>
@@ -420,7 +419,7 @@
     <script src="assets/js/custom.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
-    <script>
+    <!-- <script>
         const kecamatanData = {
             'Indralaya': [{
                     desa: 'Desa A',
@@ -676,7 +675,362 @@
 
         // Pertama kali load
         renderChart();
+    </script> -->
+
+    <script>
+        const kecamatanData = {
+            'Indralaya': [{
+                    desa: 'Desa A',
+                    kopdes: '',
+                    tglBentuk: '',
+                    tahapan: ''
+                },
+                {
+                    desa: 'Desa B',
+                    kopdes: '',
+                    tglBentuk: '',
+                    tahapan: ''
+                },
+                {
+                    desa: 'Desa Sakatiga',
+                    kopdes: 'Kopdes Indralaya Ku',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Rapat Anggota'
+                },
+                {
+                    desa: 'Desa Sakatiga Seberang',
+                    kopdes: 'Kopdes Indralaya Kita',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Musyawarah'
+                },
+                {
+                    desa: 'Desa Tanjung Seteko',
+                    kopdes: 'Kopdes Indralaya Saya',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa AA',
+                    kopdes: 'Kopdes Indralaya Unggul',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Rapat Anggota'
+                },
+                {
+                    desa: 'Desa AA',
+                    kopdes: 'Kopdes Indralaya Dia',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa AA',
+                    kopdes: 'Kopdes Indralaya Semua',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                }
+            ],
+            'Indralaya Selatan': [{
+                    desa: 'Desa C',
+                    kopdes: 'Kopdes Indsel 1',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Musyawarah'
+                },
+                {
+                    desa: 'Desa C',
+                    kopdes: '',
+                    tglBentuk: '',
+                    tahapan: ''
+                },
+            ],
+            'Indralaya Utara': [{
+                    desa: 'Desa D',
+                    kopdes: 'Kopdes Indut 1',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'SK Pengesahan'
+                },
+                {
+                    desa: 'Desa E',
+                    kopdes: '',
+                    tglBentuk: '2023-01-01',
+                    tahapan: ''
+                },
+                {
+                    desa: 'Desa E',
+                    kopdes: '',
+                    tglBentuk: '2023-01-01',
+                    tahapan: ''
+                },
+                {
+                    desa: 'Desa E',
+                    kopdes: '',
+                    tglBentuk: '2023-01-01',
+                    tahapan: ''
+                }
+            ],
+            'Kandis': [{
+                desa: 'Desa F',
+                kopdes: 'Kopdes Kandis',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pra Pembentukan'
+            }],
+            'Lubuk Keliat': [{
+                desa: 'Desa G',
+                kopdes: 'Kopdes Lubuk 1',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }],
+            'Muara Kuang': [{
+                    desa: 'Desa H',
+                    kopdes: 'Kopdes Muara 1',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Rapat Anggota'
+                },
+                {
+                    desa: 'Desa I',
+                    kopdes: 'Kopdes Muara 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Penyerahan NPAK'
+                }
+            ],
+            'Payaraman': [{
+                desa: 'Desa J',
+                kopdes: 'Kopdes Payaraman',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pengumuman BN'
+            }],
+            'Pemulutan': [{
+                desa: 'Desa K',
+                kopdes: 'Kopdes Pemulutan 1',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }],
+            'Pemulutan Barat': [{
+                desa: 'Desa L',
+                kopdes: 'Kopdes PemBar',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pra Pembentukan'
+            }],
+            'Pemulutan Selatan': [{
+                desa: 'Desa M',
+                kopdes: 'Kopdes PemSel',
+                tglBentuk: '2023-01-01',
+                tahapan: 'SABH'
+            }],
+            'Rambang Kuang': [{
+                desa: 'Desa N',
+                kopdes: 'Kopdes Rambang',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Rapat Anggota'
+            }],
+            'Rantau Alai': [{
+                desa: 'Desa O',
+                kopdes: 'Kopdes Rantau A',
+                tglBentuk: '2023-01-01',
+                tahapan: 'SK Pengesahan'
+            }],
+            'Rantau Panjang': [{
+                desa: 'Desa P',
+                kopdes: 'Kopdes Rantau P',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }],
+            'Sungai Pinang': [{
+                desa: 'Desa Q',
+                kopdes: 'Kopdes Sungai P',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Penyerahan NPAK'
+            }],
+            'Tanjung Batu': [{
+                desa: 'Desa R',
+                kopdes: 'Kopdes Tanjung',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pengumuman BN'
+            }],
+            'Tanjung Raja': [{
+                desa: 'Desa S',
+                kopdes: 'Kopdes Raja',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }]
+        };
+
+        let chart;
+
+        function renderChart() {
+            const kecamatanNames = [];
+            const kopdesCounts = [];
+            const desaCounts = [];
+
+            // Proses data Kecamatan untuk menghitung jumlah Kopdes dan desa
+            for (const [kecamatan, dataDesa] of Object.entries(kecamatanData)) {
+                let kopdesCount = 0;
+                let desaCount = dataDesa.length;
+
+                // Hitung jumlah desa yang sudah memiliki Kopdes
+                for (const desa of dataDesa) {
+                    if (desa.kopdes !== '') {
+                        kopdesCount++;
+                    }
+                }
+
+                kecamatanNames.push(kecamatan);
+                kopdesCounts.push(kopdesCount);
+                desaCounts.push(desaCount);
+            }
+
+            const options = {
+                chart: {
+                    type: 'bar',
+                    height: 450,
+                    stacked: true,
+                    events: {
+                        dataPointSelection: (event, chartContext, config) => {
+                            const selectedKecamatan = kecamatanNames[config.dataPointIndex];
+                            showDetail(selectedKecamatan);
+                        }
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: '60%'
+                    }
+                },
+                dataLabels: {
+                    enabled: true,
+                    formatter: function (val, opt) {
+                        const totalDesa = opt.w.config.series[0].data[opt.dataPointIndex] + opt.w.config.series[
+                            1].data[opt.dataPointIndex];
+                        const percent = (val / totalDesa) * 100;
+                        return `${Math.round(percent)}%`; // Menampilkan persen pada setiap batang
+                    },
+                    style: {
+                        fontSize: '12px',
+                        colors: ['#ffffff']
+                    }
+                },
+                xaxis: {
+                    categories: kecamatanNames
+                },
+                series: [{
+                        name: 'Jumlah Kopdes',
+                        data: kopdesCounts
+                    },
+                    {
+                        name: 'Belum Kopdes',
+                        data: desaCounts.map((desa, i) => desa - kopdesCounts[i])
+                    }
+                ],
+                colors: ['#046ef0', '#ffbd59'],
+                title: {
+                    text: 'Jumlah Kopdes per Kecamatan',
+                    align: 'center',
+                    style: {
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        color: '#1e40af'
+                    }
+                },
+                tooltip: {
+                    y: {
+                        formatter: function (val) {
+                            return `${val} Kopdes`;
+                        }
+                    }
+                }
+            };
+
+            if (chart) {
+                chart.updateOptions(options);
+            } else {
+                chart = new ApexCharts(document.querySelector("#chart"), options);
+                chart.render();
+            }
+        }
+
+        function getProgress(tahapan) {
+            switch (tahapan) {
+                case 'Pra Pembentukan':
+                    return 20;
+                case 'Musyawarah':
+                    return 30;
+                case 'Rapat Anggota':
+                    return 40;
+                case 'Penyerahan NPAK':
+                    return 50;
+                case 'SABH':
+                    return 60;
+                case 'SK Pengesahan':
+                    return 80;
+                case 'Pengumuman BN':
+                    return 100;
+                default:
+                    return 0; // Jika tahapan tidak dikenal
+            }
+        }
+
+        function getProgressColor(progress) {
+            if (progress < 20) {
+                return '#ef4444'; // Merah (tailwind: red-500)
+            } else if (progress < 30) {
+                return '#ec4899'; // Kuning (tailwind: yellow-400)
+            } else if (progress < 40) {
+                return '#f97316'; // Hijau (tailwind: green-500)
+            } else if (progress < 50) {
+                return '#facc15'; // Hijau (tailwind: green-500)
+            } else if (progress < 80) {
+                return '#8b5cf6'; // Hijau (tailwind: green-500)
+            } else if (progress < 100) {
+                return '#22c55e'; // Hijau (tailwind: green-500)
+            } else {
+                return '#22c55e'; // Biru (tailwind: blue-500)
+            }
+        }
+
+        function showDetail(kecamatan) {
+            const detailSection = document.getElementById('detailData');
+            const tableBody = document.getElementById('detailTableBody');
+            tableBody.innerHTML = '';
+
+            if (kecamatanData[kecamatan]) {
+                // Filter hanya desa yang memiliki Kopdes
+                const desaWithKopdes = kecamatanData[kecamatan].filter(desa => desa.kopdes !== '');
+
+                // Menambahkan desa yang memiliki Kopdes ke tabel
+                desaWithKopdes.forEach(desa => {
+                    const row = `<tr>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">${desa.desa}</td>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">${desa.kopdes}</td>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">${desa.tglBentuk}</td>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]">
+                    <div class="flex items-center gap-[10px]">
+                        <div>${desa.tahapan}</div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-[15px]">
+                            <div 
+                            class="h-[15px] rounded-full transition-all duration-700" 
+                            style="width: ${getProgress(desa.tahapan)}%; background-color: ${getProgressColor(getProgress(desa.tahapan))};">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                </tr>`;
+                    tableBody.innerHTML += row;
+                });
+
+                // Menampilkan bagian detail jika ada desa yang memiliki Kopdes
+                if (desaWithKopdes.length > 0) {
+                    detailSection.classList.remove('hidden');
+                    detailSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            }
+        }
+
+
+        // Awal load
+        renderChart();
     </script>
+
 </body>
 
 </html>
