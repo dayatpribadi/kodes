@@ -86,7 +86,7 @@
                             Versi Admin
                         </span>
                     </button>
-                    <div class="accordion-collapse hidden">
+                    <div class="accordion-collapse show">
                         <div class="pt-[4px]">
                             <ul class="sidebar-sub-menu">
                                 <li class="sidemenu-item mb-[4px] last:mb-0">
@@ -97,7 +97,7 @@
                                 </li>
                                 <li class="sidemenu-item mb-[4px] last:mb-0">
                                     <a href="koperasi_desa_monitoring.html"
-                                        class="sidemenu-link rounded-md flex items-center relative transition-all font-medium text-gray-500 dark:text-gray-400 py-[9px] ltr:pl-[38px] ltr:pr-[30px] rtl:pr-[38px] rtl:pl-[30px] hover:text-primary-500 hover:bg-primary-50 w-full text-left dark:hover:bg-[#15203c]">
+                                        class="sidemenu-link active rounded-md flex items-center relative transition-all font-medium text-gray-500 dark:text-gray-400 py-[9px] ltr:pl-[38px] ltr:pr-[30px] rtl:pr-[38px] rtl:pl-[30px] hover:text-primary-500 hover:bg-primary-50 w-full text-left dark:hover:bg-[#15203c]">
                                         Monitoring Kopdes
                                     </a>
                                 </li>
@@ -116,7 +116,7 @@
 
                 <div class="accordion-item rounded-md text-black dark:text-white mb-[5px] whitespace-nowrap">
                     <button
-                        class="accordion-button active toggle flex items-center transition-all py-[9px] ltr:pl-[14px] ltr:pr-[30px] rtl:pr-[14px] rtl:pl-[30px] rounded-md font-medium w-full relative hover:bg-gray-50 text-left dark:hover:bg-[#15203c]"
+                        class="accordion-button toggle flex items-center transition-all py-[9px] ltr:pl-[14px] ltr:pr-[30px] rtl:pr-[14px] rtl:pl-[30px] rounded-md font-medium w-full relative hover:bg-gray-50 text-left dark:hover:bg-[#15203c]"
                         type="button">
                         <i
                             class="material-symbols-outlined transition-all text-gray-500 dark:text-gray-400 ltr:mr-[7px] rtl:ml-[7px] !text-[22px] leading-none relative -top-px">
@@ -126,7 +126,7 @@
                             Versi User
                         </span>
                     </button>
-                    <div class="accordion-collapse show">
+                    <div class="accordion-collapse hidden">
                         <div class="pt-[4px]">
                             <ul class="sidebar-sub-menu">
                                 <li class="sidemenu-item mb-[4px] last:mb-0">
@@ -136,7 +136,7 @@
                                     </a>
                                 </li>
                                 <li class="sidemenu-item mb-[4px] last:mb-0">
-                                    <a href="koperasi_desa_pembentukan.html" class="active sidemenu-link rounded-md flex items-center relative transition-all
+                                    <a href="koperasi_desa_pembentukan.html" class=" sidemenu-link rounded-md flex items-center relative transition-all
                                         font-medium text-gray-500 dark:text-gray-400 py-[9px] ltr:pl-[38px]
                                         ltr:pr-[30px] rtl:pr-[38px] rtl:pl-[30px] hover:text-primary-500
                                         hover:bg-primary-50 w-full text-left dark:hover:bg-[#15203c]">
@@ -279,7 +279,7 @@
             <ol class="breadcrumb mt-[12px] md:mt-0">
                 <li
                     class="breadcrumb-item inline-block relative text-sm mx-[11px] ltr:first:ml-0 rtl:first:mr-0 ltr:last:mr-0 rtl:last:ml-0">
-                    <a href="koperasi_desa_dashboard.html"
+                    <a href="dashboard.html"
                         class="inline-block relative ltr:pl-[22px] rtl:pr-[22px] transition-all hover:text-primary-500">
                         <i
                             class="material-symbols-outlined absolute ltr:left-0 rtl:right-0 !text-lg -mt-px text-primary-500 top-1/2 -translate-y-1/2">
@@ -299,108 +299,98 @@
             </ol>
         </div>
 
-        <div class="trezo-card mb-[25px] p-[20px] md:p-[25px] rounded-md"
-            style="background: linear-gradient(81deg, #605DFF 3.39%, #9747FF 93.3%);">
-            <div class="trezo-card-content relative sm:ltr:pr-[250px] sm:rtl:pl-[250px]">
-                <div class="md:pb-[20px] flex items-center gap-[3px]">
-                    <i class="material-symbols-outlined text-white !text-[35px] ltr:mr-[8px] rtl:ml-[8px]">
-                        info
-                    </i>
-                    <h4 class="mb-[5px] md:mb-px font-semibold text-white">
-                        Petunjuk <span class="text-orange-100"> Pengisian :</span>
-                    </h4>
-                </div>
-                <p class="text-white">
-                    This NFT captures the essence of boundless potential, symbolized by a surreal landscape where
-                    the sky meets the earth in a dazzling fusion of colors. The intricate design features flowing
-                    lines that blend together, representing the limitless paths we can take in life.
-                </p>
-                <div
-                    class="sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:ltr:-right-[15px] sm:rtl:-left-[15px] sm:-mt-[8px] sm:max-w-[285px]">
-                    <img src="assets/images/online-learning.gif" alt="online-learning-image">
+        <!-- Filter -->
+
+        <!-- Filter -->
+        <div class="trezo-card bg-white dark:bg-[#0c1427] mb-[25px] p-[20px] md:p-[25px] rounded-md">
+            <div class="trezo-card-header mb-[20px] md:mb-[25px] sm:flex items-center justify-between">
+                <div class="trezo-card-title">
+                    <h5 class="mb-0">
+                        Cari Data Koperasi Desa
+                    </h5>
                 </div>
             </div>
-        </div>
+            <div class="trezo-card-content">
+                <form>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[15px] sm:gap-[20px]">
+                        <div>
+                            <input type="text"
+                                class="h-[44px] rounded-md text-black dark:text-white bg-gray-50 dark:bg-[#0a0e19] px-[17px] block w-full outline-0 placeholder:text-gray-500 dark:placeholder:text-gray-400"
+                                placeholder="Cari berdasarkan kriteria">
+                        </div>
 
-        <div class="trezo-card-header mb-[20px] md:mb-[25px] flex items-center justify-between">
-            <div class="trezo-card-title text-center">
-                <h5 class="mb-0">
-                    📁 Formulir Unggah SABH
-                </h5>
-            </div>
-        </div>
-        <div class="trezo-card-content">
-            <form>
-                <div class="trezo-card bg-white dark:bg-[#0c1427] mb-[25px] p-[20px] md:p-[25px] rounded-md">
-                    <div class="trezo-card-content mb-[25px]">
-                        <div class="sm:grid sm:grid-cols-1 md:grid-cols-4 sm:gap-[25px]">
-                            <div class="sm:col-span-4 mb-[20px] sm:mb-0">
-                                <label class="mb-[10px] text-gray-500 dark:text-white font-semibold block">
-                                    Nama Koperasi <span class="text-orange-600">*</span>
-                                </label>
-                                <input type="text"
-                                    class="h-[55px] font-medium md:text-sm rounded-[4px] text-gray-900 dark:text-white border border-gray-100 dark:border-[#0a0e19] bg-gray-50 dark:bg-[#0a0e19] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                                    placeholder="Koperasi Harapan Mekar Sari">
-                            </div>
+                        <div>
+                            <select
+                                class="h-[44px] rounded-md bg-gray-50 dark:bg-[#0a0e19] px-[13px] block w-full outline-0 cursor-pointer">
+                                <option selected>
+                                    Kecamatan
+                                </option>
+                            </select>
+                        </div>
 
-                            <div class="sm:col-span-4 mb-[20px] sm:mb-0">
-                                <label class="mb-[10px] text-black dark:text-white font-semibold block">
-                                    Upload SABH (PDF) <span class="text-orange-600">*</span>
-                                </label>
-                                <input type="file" id="sabh-upload" accept=".pdf" name="sabh_file" class="mt-1 w-full"
-                                    required />
-                            </div>
-
-
-                            <div class="sm:col-span-4 mb-[20px] sm:mb-0">
-                                <div class="hidden" id="pdf-preview">
-                                    <label class="mb-[10px] text-black dark:text-white font-semibold block">
-                                        Preview Sertifikat <span class="text-orange-600">*</span>
-                                    </label>
-                                    <iframe id="pdf-frame" class="w-full h-screen border rounded shadow-inner"
-                                        type="application/pdf"></iframe>
-
-                                </div>
-                            </div>
-
-                            <div class="sm:col-span-4 mb-[20px] sm:mb-0">
-                                <label class="mb-[10px] text-gray-500 dark:text-white font-semibold block">
-                                    Status Verifikasi <span class="text-orange-600">*</span>
-                                </label>
-                                <input type="text"
-                                    class="h-[55px] font-medium md:text-sm rounded-[4px] text-gray-900 dark:text-white border border-gray-100 dark:border-[#0a0e19] bg-gray-50 dark:bg-[#0a0e19] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400"
-                                    placeholder="Belum Diverifikasi" disabled>
-                            </div>
-                            <div class="sm:col-span-4 mb-[20px] sm:mb-0">
-                                <label class="mb-[10px] text-black dark:text-white font-medium block">
-                                    Description
-                                </label>
-                                <textarea
-                                    class="h-[140px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] p-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
-                                    placeholder="Belum ada catatan" disabled></textarea>
-                            </div>
+                        <div>
+                            <select id="filterTahapan" onchange="renderChart()"
+                                class="h-[44px] rounded-md bg-gray-50 dark:bg-[#0a0e19] px-[13px] block w-full outline-0 cursor-pointer">
+                                <option value="">Semua Tahapan</option>
+                                <option value="Pra Pembentukan">Pra Pembentukan</option>
+                                <option value="Musyawarah">Musyawarah</option>
+                                <option value="Rapat Anggota">Rapat Anggota</option>
+                                <option value="Penyerahan NPAK">Penyerahan NPAK</option>
+                                <option value="SABH">SABH</option>
+                                <option value="SK Pengesahan">SK Pengesahan</option>
+                                <option value="Pengumuman BN">Pengumuman BN</option>
+                            </select>
 
                         </div>
+
+                        <div>
+                            <button
+                                class="block w-full text-center py-[10px] px-[30px] bg-primary-500 text-white transition-all hover:bg-primary-400 rounded-md border border-primary-500 hover:border-primary-400"
+                                type="button">
+                                Terapkan Pencarian
+                            </button>
+                        </div>
                     </div>
-
-                    <a href="koperasi_desa_pembentukan.html" type="button"
-                        class="font-medium inline-block transition-all rounded-md md:text-sm ltr:mr-[15px] rtl:ml-[15px] py-[10px] md:py-[12px] px-[20px] md:px-[22px] bg-danger-500 text-white hover:bg-danger-400">
-                        Cancel
-                    </a>
-                    <button type="button"
-                        class="font-medium inline-block transition-all rounded-md md:text-sm py-[10px] md:py-[12px] px-[20px] md:px-[22px] bg-primary-500 text-white hover:bg-primary-400">
-                        <span class="inline-block relative ltr:pl-[29px] rtl:pr-[29px]">
-                            <i
-                                class="material-symbols-outlined ltr:left-0 rtl:right-0 absolute top-1/2 -translate-y-1/2">
-                                save
-                            </i>
-                            Simpan Data
-                        </span>
-                    </button>
-                </div>
-            </form>
-
+                </form>
+            </div>
         </div>
+
+        <!-- Chart -->
+        <div id="chart" class="bg-white rounded-md p-4 mb-8"></div>
+
+        <div id="detailData"
+            class="trezo-card bg-white dark:bg-[#0c1427] mb-[25px] p-[20px] md:p-[25px] rounded-md mt-[10px] hidden">
+            <h2 class="text-xl font-bold text-blue-600 mb-4">Detail Desa & Kopdes</h2>
+            <div class="table-responsive overflow-x-auto">
+                <table class="w-full">
+                    <thead class="text-black dark:text-white">
+                        <tr>
+                            <th
+                                class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap">
+                                Desa/Kecamatan
+                            </th>
+                            <th
+                                class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap">
+                                Nama Koperasi
+                            </th>
+                            <th
+                                class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap">
+                                Tanggal Dibentuk
+                            </th>
+                            <th
+                                class="font-medium ltr:text-left rtl:text-right px-[20px] py-[11px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 bg-primary-50 dark:bg-[#15203c] whitespace-nowrap">
+                                Tahapan
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="detailTableBody">
+                        <!-- Data detail akan dimasukkan lewat JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Detail Desa -->
 
         <div class="grow"></div>
 
@@ -430,45 +420,262 @@
     <script src="assets/js/custom.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
-
-
     <script>
-        // Mini PDF preview
-        document.getElementById("sabh-upload").addEventListener("change", function () {
-            const file = this.files[0];
-            if (file && file.type === "application/pdf") {
-                const url = URL.createObjectURL(file);
-                const frame = document.getElementById("pdf-frame");
-                frame.src = url;
-                document.getElementById("pdf-preview").classList.remove("hidden");
-            }
-        });
-    </script>
+        const kecamatanData = {
+            'Indralaya': [{
+                    desa: 'Desa A',
+                    kopdes: 'Kopdes Indralaya 1',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Musyawarah'
+                },
+                {
+                    desa: 'Desa B',
+                    kopdes: 'Kopdes Indralaya 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa Sakatiga',
+                    kopdes: 'Kopdes Indralaya 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa Sakatiga Seberang',
+                    kopdes: 'Kopdes Indralaya 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa Tanjung Seteko',
+                    kopdes: 'Kopdes Indralaya 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa AA',
+                    kopdes: 'Kopdes Indralaya 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa AA',
+                    kopdes: 'Kopdes Indralaya 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                },
+                {
+                    desa: 'Desa AA',
+                    kopdes: 'Kopdes Indralaya 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Pra Pembentukan'
+                }
+            ],
+            'Indralaya Selatan': [{
+                desa: 'Desa C',
+                kopdes: 'Kopdes Indsel 1',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Penyerahan NPAK'
+            }],
+            'Indralaya Utara': [{
+                    desa: 'Desa D',
+                    kopdes: 'Kopdes Indut 1',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'SK Pengesahan'
+                },
+                {
+                    desa: 'Desa E',
+                    kopdes: 'Kopdes Indut 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'SABH'
+                }
+            ],
+            'Kandis': [{
+                desa: 'Desa F',
+                kopdes: 'Kopdes Kandis',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pra Pembentukan'
+            }],
+            'Lubuk Keliat': [{
+                desa: 'Desa G',
+                kopdes: 'Kopdes Lubuk 1',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }],
+            'Muara Kuang': [{
+                    desa: 'Desa H',
+                    kopdes: 'Kopdes Muara 1',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Rapat Anggota'
+                },
+                {
+                    desa: 'Desa I',
+                    kopdes: 'Kopdes Muara 2',
+                    tglBentuk: '2023-01-01',
+                    tahapan: 'Penyerahan NPAK'
+                }
+            ],
+            'Payaraman': [{
+                desa: 'Desa J',
+                kopdes: 'Kopdes Payaraman',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pengumuman BN'
+            }],
+            'Pemulutan': [{
+                desa: 'Desa K',
+                kopdes: 'Kopdes Pemulutan 1',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }],
+            'Pemulutan Barat': [{
+                desa: 'Desa L',
+                kopdes: 'Kopdes PemBar',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pra Pembentukan'
+            }],
+            'Pemulutan Selatan': [{
+                desa: 'Desa M',
+                kopdes: 'Kopdes PemSel',
+                tglBentuk: '2023-01-01',
+                tahapan: 'SABH'
+            }],
+            'Rambang Kuang': [{
+                desa: 'Desa N',
+                kopdes: 'Kopdes Rambang',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Rapat Anggota'
+            }],
+            'Rantau Alai': [{
+                desa: 'Desa O',
+                kopdes: 'Kopdes Rantau A',
+                tglBentuk: '2023-01-01',
+                tahapan: 'SK Pengesahan'
+            }],
+            'Rantau Panjang': [{
+                desa: 'Desa P',
+                kopdes: 'Kopdes Rantau P',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }],
+            'Sungai Pinang': [{
+                desa: 'Desa Q',
+                kopdes: 'Kopdes Sungai P',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Penyerahan NPAK'
+            }],
+            'Tanjung Batu': [{
+                desa: 'Desa R',
+                kopdes: 'Kopdes Tanjung',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Pengumuman BN'
+            }],
+            'Tanjung Raja': [{
+                desa: 'Desa S',
+                kopdes: 'Kopdes Raja',
+                tglBentuk: '2023-01-01',
+                tahapan: 'Musyawarah'
+            }]
+        };
 
-    <script>
-        // Mini PDF preview
-        document.getElementById("pengesahan-upload").addEventListener("change", function () {
-            const file = this.files[0];
-            if (file && file.type === "application/pdf") {
-                const url = URL.createObjectURL(file);
-                const frame = document.getElementById("pdf-frame-prev");
-                frame.src = url;
-                document.getElementById("pengesahan-preview").classList.remove("hidden");
-            }
-        });
-    </script>
+        let chart;
 
-    <script>
-        // Mini PDF preview
-        document.getElementById("bn-upload").addEventListener("change", function () {
-            const file = this.files[0];
-            if (file && file.type === "application/pdf") {
-                const url = URL.createObjectURL(file);
-                const frame = document.getElementById("bn-frame-prev");
-                frame.src = url;
-                document.getElementById("bn-preview").classList.remove("hidden");
+        function renderChart() {
+            const filter = document.getElementById('filterTahapan').value;
+            const kecamatanNames = [];
+            const kopdesCounts = [];
+            const colors = [];
+
+            for (const [kecamatan, dataDesa] of Object.entries(kecamatanData)) {
+                let count = 0;
+                for (const desa of dataDesa) {
+                    if (!filter || desa.tahapan === filter) {
+                        count++;
+                    }
+                }
+                kecamatanNames.push(kecamatan);
+                kopdesCounts.push(count);
+
+                // Perbaiki logika warna
+                if (count < 3) {
+                    colors.push('#ef4444'); // merah
+                } else if (count < 8) {
+                    colors.push('#facc15'); // kuning
+                } else {
+                    colors.push('#3b82f6'); // biru
+                }
             }
-        });
+
+            const options = {
+                chart: {
+                    type: 'bar',
+                    height: 400,
+                    events: {
+                        dataPointSelection: (event, chartContext, config) => {
+                            const selectedKecamatan = kecamatanNames[config.dataPointIndex];
+                            showDetail(selectedKecamatan);
+                        }
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        borderRadius: 4
+                    }
+                },
+                dataLabels: {
+                    enabled: true
+                },
+                xaxis: {
+                    categories: kecamatanNames
+                },
+                colors: colors, // warna batang dinamis
+                title: {
+                    text: 'Jumlah Kopdes per Kecamatan',
+                    align: 'center',
+                    style: {
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        color: '#1e40af'
+                    }
+                },
+                series: [{
+                    name: 'Jumlah Kopdes',
+                    data: kopdesCounts
+                }]
+            };
+
+            if (chart) {
+                chart.updateOptions(options);
+            } else {
+                chart = new ApexCharts(document.querySelector("#chart"), options);
+                chart.render();
+            }
+        }
+
+        function showDetail(kecamatan) {
+            const detailSection = document.getElementById('detailData');
+            const tableBody = document.getElementById('detailTableBody');
+            tableBody.innerHTML = '';
+
+            if (kecamatanData[kecamatan]) {
+                for (const desa of kecamatanData[kecamatan]) {
+                    const row = `<tr>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]"">${desa.desa}</td>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]"">${desa.kopdes}</td>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]"">${desa.tglBentuk}</td>
+                <td class="ltr:text-left rtl:text-right whitespace-nowrap px-[20px] py-[15px] md:ltr:first:pl-[25px] md:rtl:first:pr-[25px] ltr:first:pr-0 rtl:first:pl-0 border-b border-gray-100 dark:border-[#172036]"">${desa.tahapan}</td>
+              </tr>`;
+                    tableBody.innerHTML += row;
+                }
+                detailSection.classList.remove('hidden');
+                detailSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Pertama kali load
+        renderChart();
     </script>
 </body>
 
