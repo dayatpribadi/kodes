@@ -55,30 +55,59 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <script>
-        // Inisialisasi peta
         var mymap = L.map('map').setView([-3.4, 104.7], 10);
 
-        // Tambah Tile Layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(mymap);
 
-        // Load data GeoJSON dan Data Desa
+        let koperasiDataGlobal = {};
+        let activeLayer = null; // Simpan layer aktif
+        let geojsonLayer = null; // GeoJSON layer global
+
         Promise.all([
             fetch('data/oganilir_kecamatan.geojson').then(res => res.json()),
             fetch('data/koperasi_desa_data.json').then(res => res.json())
         ]).then(([geojsonData, koperasiData]) => {
+            koperasiDataGlobal = koperasiData;
 
-            L.geoJSON(geojsonData, {
+            geojsonLayer = L.geoJSON(geojsonData, {
                 style: function (feature) {
-                    return {
-                        color: "#ABABAB",
-                        weight: 2,
-                        fillOpacity: 0.3
-                    };
+                    var namaKecamatan = feature.properties.name;
+                    var data = koperasiData[namaKecamatan];
+
+                    if (data) {
+                        var persentase = (data.desaKoperasi.length / data.desaTotal) * 100;
+                        return {
+                            color: "#ababab",
+                            weight: 1,
+                            fillOpacity: 0.5,
+                            fillColor: persentase > 50 ? "#2ecc71" : "#e74c3c"
+                        };
+                    } else {
+                        return {
+                            color: "#ababab",
+                            weight: 1,
+                            fillOpacity: 0.2,
+                            fillColor: "#bdc3c7"
+                        };
+                    }
                 },
                 onEachFeature: function (feature, layer) {
                     layer.on('click', function (e) {
+                        // Reset highlight sebelumnya
+                        if (activeLayer && activeLayer !== layer) {
+                            geojsonLayer.resetStyle(activeLayer);
+                        }
+                        activeLayer = layer;
+
+                        // Set highlight kecamatan aktif
+                        layer.setStyle({
+                            weight: 1,
+                            color: "#FFF",
+                            fillOpacity: 0.7
+                        });
+
                         var namaKecamatan = feature.properties.name;
                         var data = koperasiData[namaKecamatan];
 
@@ -98,7 +127,6 @@
                             content += `<p>Data tidak tersedia.</p>`;
                         }
 
-                        // Menampilkan pop-up di tengah area kecamatan
                         layer.bindPopup(content).openPopup();
                     });
                 }

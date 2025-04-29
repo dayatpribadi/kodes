@@ -7,7 +7,29 @@
     "TANJUNG BATU": {
       "desaTotal": 15,
       "desaKoperasi": ["Desa K", "Desa L"],
-      "desaBelum": ["Desa M", "Desa N", "Desa O", "Desa P"]
+      "desaBelum": [
+        "Bangun Jaya",
+        "Buraian",
+        "Limbang Jaya I",
+       "Limbang Jaya II",
+        "Pajar Bulan",
+        "Sentul",
+        "Senuro Barat",
+        "Senuro Timur",
+        "Seri Bandung",
+        "Seri Tanjung",
+        "Tanjung Atap",
+        "Tanjung Atap Barat",
+        "Tanjung Baru Petai",
+        "Tanjung Batu Seberang",
+        "Tanjung Laut",
+        "Tanjung Pinang I",
+        "Tanjung Pinang II",
+        "Tanjung Tambak",
+        "Tanjung Tambak Baru"
+      ]
     }
   }
   
+
+  	
