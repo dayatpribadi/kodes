@@ -1,0 +1,13 @@
+{
+    "INDRALAYA": {
+      "desaTotal": 20,
+      "desaKoperasi": ["Desa A", "Desa B", "Desa C", "Desa D"],
+      "desaBelum": ["Desa E", "Desa F", "Desa G", "Desa H", "Desa I", "Desa J"]
+    },
+    "TANJUNG BATU": {
+      "desaTotal": 15,
+      "desaKoperasi": ["Desa K", "Desa L"],
+      "desaBelum": ["Desa M", "Desa N", "Desa O", "Desa P"]
+    }
+  }
+  
