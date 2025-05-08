@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links Of CSS File -->
+    <link rel="stylesheet" href="assets/css/remixicon.css">
+    <link rel="stylesheet" href="assets/css/apexcharts.css">
+    <link rel="stylesheet" href="assets/css/simplebar.css">
+    <link rel="stylesheet" href="assets/css/prism.css">
+    <link rel="stylesheet" href="assets/css/jsvectormap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/quill.snow.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+
+    <!-- Title -->
+    <title>Koperasi Merah Putih</title>
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        #containers {
+            display: flex;
+        }
+
+        #map {
+            flex: 2;
+            height: 450px;
+            border: 2px solid #FFF;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Home -->
+    <div class="overflow-hidden">
+
+        <!-- Navbar -->
+        <div class="fixed top-0 right-0 left-0 transition-all h-auto z-[5] py-[20px]" id="navbar">
+            <div class="container 2xl:max-w-[1320px] mx-auto px-[12px]">
+                <div class="flex items-center relative flex-wrap lg:flex-nowrap justify-between">
+                    <a href="index.html" class="inline-block max-w-[130px] ltr:mr-[15px] rtl:ml-[15px]">
+                        <img src="assets/images/logo_mp.png" alt="logo" class="inline-block dark:hidden">
+                        <img src="assets/images/logo_mp.png" alt="logo" class="hidden dark:inline-block">
+                    </a>
+                    <button type="button" class="inline-block relative leading-none lg:hidden" id="navbar-burger-menu">
+                        <span class="h-[3px] w-[30px] my-[5px] block bg-black dark:bg-white"></span>
+                        <span class="h-[3px] w-[30px] my-[5px] block bg-black dark:bg-white"></span>
+                        <span class="h-[3px] w-[30px] my-[5px] block bg-black dark:bg-white"></span>
+                    </button>
+                    <div class="hidden lg:flex justify-end items-center grow basis-full basis-auto">
+                        <!-- For Big Devices -->
+                        <ul
+                            class="flex ltr:ml-[30px] rtl:mr-[30px] ltr:xl:ml-[55px] rtl:xl:mr-[55px] flex-row gap-[30px] xl:gap-[50px]">
+                            <li>
+                                <a href="index.html"
+                                    class="font-medium text-primary-600 dark:text-gray-400 transition-all hover:text-primary-600 text-[15px] xl:text-md">
+                                    Beranda
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tentang"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600 text-[15px] xl:text-md">
+                                    Tentang
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#model"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600 text-[15px] xl:text-md">
+                                    Model
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#manfaat"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600 text-[15px] xl:text-md">
+                                    Manfaat
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600 text-[15px] xl:text-md">
+                                    Regulasi
+                                </a>
+                            </li>
+                            <li>
+                                <a href="statistik.html"
+                                    class="font-medium active text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600 text-[15px] xl:text-md">
+                                    Statistik
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600 text-[15px] xl:text-md">
+                                    Hubungi Kami
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="bg-white dark:bg-black mt-[20px] p-[20px] md:p-[30px] w-full hidden lg:!hidden"
+                        id="navbar-collapse">
+                        <!-- For Resposive -->
+                        <ul>
+                            <li class="my-[14px] md:my-[16px] first:mt-0 last:mb-0">
+                                <a href="index.html"
+                                    class="font-medium text-primary-600 dark:text-primary-600 transition-all hover:text-primary-600">
+                                    Beranda
+                                </a>
+                            </li>
+                            <li class="my-[14px] md:my-[16px] first:mt-0 last:mb-0">
+                                <a href="#tentang"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600">
+                                    Tentang
+                                </a>
+                            </li>
+                            <li class="my-[14px] md:my-[16px] first:mt-0 last:mb-0">
+                                <a href="#model"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600">
+                                    Model
+                                </a>
+                            </li>
+                            <li class="my-[14px] md:my-[16px] first:mt-0 last:mb-0">
+                                <a href="#manfaat"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600">
+                                    Manfaat
+                                </a>
+                            </li>
+                            <li class="my-[14px] md:my-[16px] first:mt-0 last:mb-0">
+                                <a href="#"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600">
+                                    Regulasi
+                                </a>
+                            </li>
+                            <li class="my-[14px] md:my-[16px] first:mt-0 last:mb-0">
+                                <a href="statistik.html"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600">
+                                    Statistik
+                                </a>
+                            </li>
+                            <li class="my-[14px] md:my-[16px] first:mt-0 last:mb-0">
+                                <a href="#"
+                                    class="font-medium text-gray-500 dark:text-gray-400 transition-all hover:text-primary-600">
+                                    Hubungi Kami
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar -->
+
+        <!-- Team -->
+        <div class="container pt-[60px] md:pt-[80px] lg:pt-[100px] xl:pt-[150px] 2xl:max-w-[1320px] mx-auto px-[12px] relative z-[1]">
+            <div
+                class="mx-auto text-center md:max-w-[650px] lg:max-w-[810px] xl:max-w-[785px] mb-[35px] md:mb-[50px] lg:mb-[65px] xl:mb-[90px]">
+                <h2
+                    class="mb-0 text-[24px] md:text-[28px] lg:text-[34px] xl:text-[36px] -tracking-[.5px] md:-tracking-[.6px] lg:-tracking-[.8px] xl:-tracking-[1px] leading-[1.2]">
+                    Statistik Koperasi Desa/Kelurahan Merah Putih Kabupaten Ogan Ilir
+                </h2>
+            </div>
+            <div id="containers">
+                <div id="map"></div>
+            </div>
+            <div class="ltr:left-[90px] rtl:right-[90px] -z-[1] bottom-[15px] absolute blur-[150px]">
+                <img src="assets/images/front-pages/shape1.png" alt="shape1">
+            </div>
+            <div class="ltr:-right-[15px] rtl:-left-[15px] -z-[1] -bottom-[130px] absolute blur-[125px]">
+                <img src="assets/images/front-pages/shape1.png" alt="shape1">
+            </div>
+        </div>
+        <!-- End Team -->
+
+        <!-- Footer -->
+        <div class="bg-white pt-[60px] md:pt-[80px] lg:pt-[100px] xl:pt-[150px] border-gray-100 dark:border-[#172036]">
+            <div class="container 2xl:max-w-[1320px] mx-auto px-[12px]">
+                <div class="items-center justify-between gap-[25px]">
+                    <div class="ltr:xl:-mr-[35px] rtl:xl:-ml-[35px]">
+                        <div class="flex items-center gap-[10px]">
+                            <a href="#" class="inline-block max-w-[132px] mb-[20px] md:mb-[23px]">
+                                <img src="assets/images/Logo_pemkab_oi.png" alt="logo">
+                            </a>
+                            <a href="#" class="inline-block max-w-[125px] mb-[20px] md:mb-[23px]">
+                                <img src="assets/images/logo_mp.png" alt="logo">
+                            </a>
+                            <a href="#" class="inline-block max-w-[115px] mb-[20px] md:mb-[23px]">
+                                <img src="assets/images/logo_smart.png" alt="logo">
+                            </a>
+                        </div>
+                        <p class="leading-[1.6] font-semibold">
+                            Bergerak dari Desa, Maju Bersama Menuju Ogan Ilir Smart
+                        </p>
+                        <span class="w-[125px]">Koperasi Desa Merah Putih hadir sebagai wadah pemberdayaan ekonomi
+                            masyarakat desa di
+                            Kabupaten Ogan Ilir. Dengan semangat gotong royong dan kolaborasi antar desa, setiap tahapan
+                            pembentukan koperasi menjadi langkah strategis menuju desa mandiri dan digital.
+                            Melalui penguatan kelembagaan ekonomi lokal, kita wujudkan Ogan Ilir yang cerdas, inklusif,
+                            dan berdaya saing — dimulai dari desa.</span>
+                    </div>
+                    <div class="mt-[20px] md:mt-[35px]">
+                        <a href="#" target="_blank"
+                            class="inline-block leading-none text-[20px] text-primary-600 transition-all hover:text-primary-500 ltr:mr-[5px] rtl:ml-[5px] ltr:last:mr-0 rtl:last:ml-0">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" target="_blank"
+                            class="inline-block leading-none text-[20px] text-primary-600 transition-all hover:text-primary-500 ltr:mr-[5px] rtl:ml-[5px] ltr:last:mr-0 rtl:last:ml-0">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" target="_blank"
+                            class="inline-block leading-none text-[20px] text-primary-600 transition-all hover:text-primary-500 ltr:mr-[5px] rtl:ml-[5px] ltr:last:mr-0 rtl:last:ml-0">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" target="_blank"
+                            class="inline-block leading-none text-[20px] text-primary-600 transition-all hover:text-primary-500 ltr:mr-[5px] rtl:ml-[5px] ltr:last:mr-0 rtl:last:ml-0">
+                            <i class="ri-dribbble-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="py-[15px] md:py-[20px] mt-[60px] md:mt-[80px] lg:mt-[100px] bg-primary-500 dark:bg-[#0c1427] text-center">
+                <div class="container 2xl:max-w-[1320px] mx-auto px-[12px]">
+                    <p class="leading-[1.6] text-white">
+                        Copyright © <span class="text-white">2025 Koperasi Desa</span> Merah Putih | <a href="#"
+                            target="_blank" class="text-white transition-all hover:underline">
+                            Diskominfo Kabupaten
+                            Ogan Ilir</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer -->
+
+    </div>
+    <!-- End Home -->
+
+    <!-- Links Of JS File -->
+    <script src="assets/js/apexcharts.min.js"></script>
+    <script src="assets/js/fslightbox.js"></script>
+    <script src="assets/js/simplebar.min.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/clipboard.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/fullcalendar.min.js"></script>
+    <script src="assets/js/jsvectormap.min.js"></script>
+    <script src="assets/js/world-merc.js"></script>
+    <script src="assets/js/quill.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        var mymap = L.map('map').setView([-3.4, 104.7], 9);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(mymap);
+
+        let koperasiDataGlobal = {};
+        let activeLayer = null; // Simpan layer aktif
+        let geojsonLayer = null; // GeoJSON layer global
+
+        Promise.all([
+            fetch('data/oganilir_kecamatan.geojson').then(res => res.json()),
+            fetch('data/koperasi_desa_data.json').then(res => res.json())
+        ]).then(([geojsonData, koperasiData]) => {
+            koperasiDataGlobal = koperasiData;
+
+            geojsonLayer = L.geoJSON(geojsonData, {
+                style: function (feature) {
+                    var namaKecamatan = feature.properties.name;
+                    var data = koperasiData[namaKecamatan];
+
+                    if (data) {
+                        var persentase = (data.desaKoperasi.length / data.desaTotal) * 100;
+                        return {
+                            color: "#ababab",
+                            weight: 1,
+                            fillOpacity: 0.5,
+                            fillColor: persentase > 50 ? "#2ecc71" : "#e74c3c"
+                        };
+                    } else {
+                        return {
+                            color: "#ababab",
+                            weight: 1,
+                            fillOpacity: 0.2,
+                            fillColor: "#bdc3c7"
+                        };
+                    }
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.on('click', function (e) {
+                        // Reset highlight sebelumnya
+                        if (activeLayer && activeLayer !== layer) {
+                            geojsonLayer.resetStyle(activeLayer);
+                        }
+                        activeLayer = layer;
+
+                        // Set highlight kecamatan aktif
+                        layer.setStyle({
+                            weight: 1,
+                            color: "#FFF",
+                            fillOpacity: 0.7
+                        });
+
+                        var namaKecamatan = feature.properties.name;
+                        var data = koperasiData[namaKecamatan];
+
+                        var content = `<h5>${namaKecamatan}</h5>`;
+
+                        if (data) {
+                            var content = `
+  <div style="font-size: 12px;">
+    <h6 style="margin-bottom:5px;">${namaKecamatan}</h6>
+    <table style="width: 100%; font-size: 12px; border-collapse: collapse;">
+      <tr>
+        <td><b>Total Desa</b></td>
+        <td class="rounded-sm" style="text-align:right; background-color: #f2f2f2;">${data.desaTotal}</td>
+      </tr>
+      <tr>
+        <td><b>Sudah Membentuk Koperasi</b></td>
+        <td class="rounded-sm" style="text-align:right; background-color: #d4edda;"">${data.desaKoperasi.length}</td>
+      </tr>
+      <tr>
+        <td><b>Belum Membentuk Koperasi</b></td>
+        <td class="rounded-sm" style="text-align:right; background-color: #f8d7da;">${data.desaBelum.length}</td>
+      </tr>
+    </table>
+    <br>
+    <h6 style="margin:5px 0 2px;">Sudah Membentuk:</h6>
+        <p style="font-size:11px;">
+        ${data.desaKoperasi.join(", ")}
+        </p>
+    <h6 style="margin:10px 0 2px;">Belum Membentuk:</h6>
+        <p style="font-size:11px;">
+        ${data.desaBelum.join(", ")}
+        </p>
+  </div>
+`;
+
+                        } else {
+                            content += `<p>Data tidak tersedia.</p>`;
+                        }
+
+                        layer.bindPopup(content).openPopup();
+                    });
+                }
+            }).addTo(mymap);
+
+        }).catch(err => {
+            console.error('Gagal load data:', err);
+        });
+    </script>
+</body>
+
+</html>
