@@ -137,20 +137,30 @@
     <script>
         document.getElementById('signInBtn').addEventListener('click', function () {
             Toastify({
-                text: "Selamat, Login berhasil!",
+                text: `
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+                            <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.627-5.373-12-12-12zm-1.2 17.4l-5.4-5.4 1.8-1.8 3.6 3.6 7.2-7.2 1.8 1.8-9 9z"/>
+                        </svg>
+                        <span style="font-weight: 500;">Selamat, Login berhasil!</span>
+                    </div>
+                `,
                 duration: 3000,
                 gravity: "top",
                 position: "right",
-                backgroundColor: "#22C55E", // Tailwind green-500
-                close: true,
+                backgroundColor: "#22C55E",
+                className: "rounded-md shadow-md text-white",
+                stopOnFocus: true,
+                escapeMarkup: false
             }).showToast();
 
-            // Redirect ke dashboard setelah delay
             setTimeout(() => {
                 window.location.href = "koperasi_desa_dashboard.html";
             }, 1500);
         });
     </script>
+
+
 </body>
 
 </html>
