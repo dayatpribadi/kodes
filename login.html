@@ -30,6 +30,8 @@
         rel="stylesheet">
 
     <!-- Material Icons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
@@ -99,7 +101,7 @@
                         class="inline-block text-primary-500 transition-all font-semibold hover:underline">
                         Forgot Password?
                     </a>
-                    <a href="koperasi_desa_dashboard.html" type="submit"
+                    <button id="signInBtn" type="submit"
                         class="md:text-md block w-full text-center transition-all rounded-md font-medium mt-[20px] md:mt-[25px] py-[12px] px-[25px] text-white bg-primary-500 hover:bg-primary-400">
                         <span class="flex items-center justify-center gap-[5px]">
                             <i class="material-symbols-outlined">
@@ -107,7 +109,7 @@
                             </i>
                             Sign In
                         </span>
-                    </a>
+                    </button>
                     <p class="mt-[15px] md:mt-[20px]">
                         Don’t have an account. <a href="#"
                             class="text-primary-500 transition-all font-semibold hover:underline">Sign Up</a>
@@ -130,6 +132,25 @@
     <script src="assets/js/world-merc.js"></script>
     <script src="assets/js/quill.min.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+        document.getElementById('signInBtn').addEventListener('click', function () {
+            Toastify({
+                text: "Selamat, Login berhasil!",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#22C55E", // Tailwind green-500
+                close: true,
+            }).showToast();
+
+            // Redirect ke dashboard setelah delay
+            setTimeout(() => {
+                window.location.href = "koperasi_desa_dashboard.html";
+            }, 1500);
+        });
+    </script>
 </body>
 
 </html>
