@@ -39,85 +39,81 @@
 <body>
 
     <!-- Sign In -->
-    <div class="bg-white dark:bg-[#0a0e19] py-[60px] md:py-[80px] lg:py-[135px]">
-        <div class="mx-auto px-[12.5px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1255px]">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-[25px] items-center">
-                <div
-                    class="xl:ltr:-mr-[25px] xl:rtl:-ml-[25px] 2xl:ltr:-mr-[45px] 2xl:rtl:-ml-[45px] rounded-[25px] order-2 lg:order-1">
-                    <img src="assets/images/sign-in.jpg" alt="sign-in-image" class="rounded-[25px]">
-                </div>
-                <div class="xl:ltr:pl-[90px] xl:rtl:pr-[90px] 2xl:ltr:pl-[120px] 2xl:rtl:pr-[120px] order-1 lg:order-2">
-
-                    <div class="my-[17px] md:my-[25px]">
-                        <h1 class="font-semibold text-[22px] md:text-xl lg:text-2xl mb-[5px] md:mb-[7px]">
-                            Selamat Datang!
-                        </h1>
-                        <p class="font-medium lg:text-md text-[#445164] dark:text-gray-400">
-                            Koperasi Desa Merah Putih
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-between mb-[20px] md:mb-[23px] gap-[12px]">
-                        <div class="grow">
-                            <button type="button"
-                                class="block text-center w-full rounded-md transition-all py-[8px] md:py-[10.5px] px-[15px] md:px-[25px] text-black dark:text-white border border-[#D6DAE1] bg-white dark:bg-[#0a0e19] dark:border-[#172036] shadow-sm hover:border-primary-500">
-                                <img src="assets/images/icons/google.svg" class="inline-block" alt="google">
-                            </button>
-                        </div>
-                        <div class="grow">
-                            <button type="button"
-                                class="block text-center w-full rounded-md transition-all py-[8px] md:py-[10.5px] px-[15px] md:px-[25px] text-black dark:text-white border border-[#D6DAE1] bg-white dark:bg-[#0a0e19] dark:border-[#172036] shadow-sm hover:border-primary-500">
-                                <img src="assets/images/icons/facebook2.svg" class="inline-block" alt="google">
-                            </button>
-                        </div>
-                        <div class="grow">
-                            <button type="button"
-                                class="block text-center w-full rounded-md transition-all py-[8px] md:py-[10.5px] px-[15px] md:px-[25px] text-black dark:text-white border border-[#D6DAE1] bg-white dark:bg-[#0a0e19] dark:border-[#172036] shadow-sm hover:border-primary-500">
-                                <img src="assets/images/icons/apple.svg" class="inline-block" alt="google">
-                            </button>
-                        </div>
-                    </div>
-                    <div class="mb-[15px] relative">
-                        <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
-                            Email Address
-                        </label>
-                        <input type="text"
-                            class="h-[55px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
-                            placeholder="example@trezo.com">
-                    </div>
-                    <div class="mb-[15px] relative" id="passwordHideShow">
-                        <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
-                            Password
-                        </label>
-                        <input type="password"
-                            class="h-[55px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
-                            id="password" placeholder="Type password">
-                        <button
-                            class="absolute text-lg ltr:right-[20px] rtl:left-[20px] bottom-[12px] transition-all hover:text-primary-500"
-                            id="toggleButton" type="button">
-                            <i class="ri-eye-off-line"></i>
-                        </button>
-                    </div>
-                    <a href="forgot-password.html"
-                        class="inline-block text-primary-500 transition-all font-semibold hover:underline">
-                        Forgot Password?
-                    </a>
-                    <button id="signInBtn" type="submit"
-                        class="md:text-md block w-full text-center transition-all rounded-md font-medium mt-[20px] md:mt-[25px] py-[12px] px-[25px] text-white bg-primary-500 hover:bg-primary-400">
-                        <span class="flex items-center justify-center gap-[5px]">
-                            <i class="material-symbols-outlined">
-                                login
-                            </i>
-                            Sign In
-                        </span>
-                    </button>
-                    <p class="mt-[15px] md:mt-[20px]">
-                        Don’t have an account. <a href="#"
-                            class="text-primary-500 transition-all font-semibold hover:underline">Sign Up</a>
-                    </p>
-                </div>
+    <div class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center px-4 md:px-8 lg:px-12 py-8"
+        style="background-image: url('https://images.unsplash.com/photo-1442544213729-6a15f1611937?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div
+            class="bg-white dark:bg-[#0a0e19] shadow-xl rounded-xl w-[550px] p-[25px] mx-[20px] md:p-8 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
+            <div class="text-start mb-[25px]">
+                <img src="assets/images/kopdeskel.webp" width="200" alt="">
+                <h1 class="font-semibold text-lg md:text-2xl mt-[25px] text-black dark:text-white">
+                    Masuk Ke Akun Koperasi Desa/Kelurahan Merah Putih
+                </h1>
             </div>
+            <div class="mb-[15px] relative">
+                <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
+                    Email atau Username
+                </label>
+                <input type="text"
+                    class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
+                    placeholder="Masukkan email atau username anda" id="email">
+            </div>
+            <div class="mb-[15px] relative" id="passwordHideShow">
+                <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
+                    Kata Sandi
+                </label>
+                <input type="password"
+                    class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
+                    id="password" placeholder="Masukkan kata sandi anda">
+                <button
+                    class="absolute text-lg ltr:right-[20px] bottom-[5px] rtl:left-[20px] transition-all hover:text-primary-500"
+                    id="toggleButton" type="button">
+                    <i class="ri-eye-off-line"></i>
+                </button>
+            </div>
+            <div class="mb-[15px] relative">
+                <div
+                    class="flex items-center gap-4 mb-[10px] justify-center bg-gray-100 dark:bg-gray-800 rounded-md select-none">
+                    <span id="captchaText" class="font-bold text-5xl px-[20px] py-8">
+                        <!-- Akan diisi oleh JS -->
+                    </span>
+                    <button type="button" id="refreshCaptcha"
+                        class="text-2xl ml-[15px] text-primary-500 hover:underline">
+                        <i class="ri-reset-right-line"></i>
+                    </button>
+                </div>
+                <label for="captcha" class="block mb-[15px] text-black dark:text-white font-medium">
+                    Untuk menjamin keamanan, isikan kode di atas!
+                </label>
+                <input type="text" id="captchaInput" placeholder="Masukkan angka di atas"
+                    class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500" />
+            </div>
+            <a type="button" href="koperasi_desa_dashboard.html"
+                class="md:text-md block w-full text-center transition-all rounded-md font-medium mt-[20px] mb-[10px] md:mt-[25px] py-[12px] px-[25px] text-white bg-primary-500 hover:bg-primary-400">
+                <span class="flex items-center justify-center gap-[5px]">
+                    <i class="material-symbols-outlined">
+                        login
+                    </i>
+                    Masuk Aplikasi
+                </span>
+            </a>
+
+            <button id="signInBtn" type="submit"
+                class="md:text-md block w-full text-center transition-all rounded-md font-medium mb-[20px] py-[12px] px-[25px] text-gray-600 bg-gray-50 hover:bg-primary-400 hover:text-white dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
+                <span class="flex items-center justify-center gap-[5px]">
+                    <i class="material-symbols-outlined">
+                        travel_explore
+                    </i>
+                    Kembali ke halaman utama
+                </span>
+            </button>
+
+            <p class="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+                © 2025 <a href="#" class="text-primary-500 hover:underline font-semibold">Diskominfo Kab. Ogan Ilir</a>
+            </p>
         </div>
     </div>
+
+
     <!-- End Sign In -->
 
     <!-- Links Of JS File -->
@@ -160,6 +156,66 @@
         });
     </script>
 
+    <script>
+        let currentCaptcha = '';
+
+        function generateCaptcha(length = 5) {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Hindari huruf ambigu
+            let captcha = '';
+            for (let i = 0; i < length; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            currentCaptcha = captcha;
+            const captchaEl = document.getElementById('captchaText');
+            if (captchaEl) captchaEl.textContent = captcha;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateCaptcha();
+
+            const refreshBtn = document.getElementById('refreshCaptcha');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', () => {
+                    console.log('Captcha di-refresh');
+                    generateCaptcha();
+                });
+            } else {
+                console.warn('Tombol refreshCaptcha tidak ditemukan di DOM');
+            }
+
+            document.getElementById('signInBtn').addEventListener('click', function (e) {
+                const input = document.getElementById('captchaInput').value.trim().toUpperCase();
+                if (input !== currentCaptcha) {
+                    e.preventDefault();
+                    alert('Captcha salah. Silakan coba lagi.');
+                    generateCaptcha();
+                    return;
+                }
+
+                Toastify({
+                    text: `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.627-5.373-12-12-12zm-1.2 17.4l-5.4-5.4 1.8-1.8 3.6 3.6 7.2-7.2 1.8 1.8-9 9z"/>
+                </svg>
+                <span style="font-weight: 500;">Selamat, Login berhasil!</span>
+            </div>
+        `,
+                    duration: 3000,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#22C55E",
+                    className: "rounded-md shadow-md text-white",
+                    stopOnFocus: true,
+                    escapeMarkup: false
+                }).showToast();
+
+                setTimeout(() => {
+                    window.location.href = "koperasi_desa_dashboard.html";
+                }, 1500);
+            });
+        });
+    </script>
 
 </body>
 

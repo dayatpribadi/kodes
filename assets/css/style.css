@@ -760,6 +760,10 @@ video {
   bottom: 0px;
 }
 
+.bottom-\[5px\] {
+  bottom: 5px;
+}
+
 .bottom-\[10px\] {
   bottom: 10px;
 }
@@ -2201,6 +2205,10 @@ video {
 
 .w-\[90px\] {
   width: 90px;
+}
+
+.w-\[550px\] {
+  width: 550px;
 }
 
 .w-full {
@@ -9095,6 +9103,11 @@ html[dir="rtl"] {
   .sm\:text-\[15px\] {
     font-size: 15px;
   }
+
+  .sm\:bottom-0 {
+    bottom: 0px;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -9124,6 +9137,10 @@ html[dir="rtl"] {
 
   .md\:bottom-auto {
     bottom: auto;
+  }
+
+  .md\:bottom-0 {
+    bottom: 0px;
   }
 
   .md\:top-0 {
