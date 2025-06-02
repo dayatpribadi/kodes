@@ -51,19 +51,19 @@
             </div>
             <div class="mb-[15px] relative">
                 <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
-                    Email atau Username
+                    Email atau Username <span class="text-gray-300">(Dummy: admin@kopdes.id)</span>
                 </label>
                 <input type="text"
                     class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
-                    placeholder="Masukkan email atau username anda" id="email">
+                    placeholder="Masukkan email atau username anda" id="email" required>
             </div>
             <div class="mb-[15px] relative" id="passwordHideShow">
                 <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
-                    Kata Sandi
+                    Kata Sandi <span class="text-gray-300">(Dummy: kopdes123)</span>
                 </label>
                 <input type="password"
                     class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
-                    id="password" placeholder="Masukkan kata sandi anda">
+                    id="password" placeholder="Masukkan kata sandi anda" required>
                 <button
                     class="absolute text-lg ltr:right-[20px] bottom-[5px] rtl:left-[20px] transition-all hover:text-primary-500"
                     id="toggleButton" type="button">
@@ -84,10 +84,10 @@
                 <label for="captcha" class="block mb-[15px] text-black dark:text-white font-medium">
                     Untuk menjamin keamanan, isikan kode di atas!
                 </label>
-                <input type="text" id="captchaInput" placeholder="Masukkan angka di atas"
+                <input required type="text" id="captchaInput" placeholder="Masukkan angka di atas"
                     class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500" />
             </div>
-            <button type="submit" id="signInBtn"
+            <button type="button" id="masukButton"
                 class="md:text-md block w-full text-center transition-all rounded-md font-medium mt-[20px] mb-[10px] md:mt-[25px] py-[12px] px-[25px] text-white bg-primary-500 hover:bg-primary-400">
                 <span class="flex items-center justify-center gap-[5px]">
                     <i class="material-symbols-outlined">
@@ -131,36 +131,10 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script>
-        document.getElementById('signInBtn').addEventListener('click', function () {
-            Toastify({
-                text: `
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
-                            <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.627-5.373-12-12-12zm-1.2 17.4l-5.4-5.4 1.8-1.8 3.6 3.6 7.2-7.2 1.8 1.8-9 9z"/>
-                        </svg>
-                        <span style="font-weight: 500;">Selamat, Login berhasil!</span>
-                    </div>
-                `,
-                duration: 3000,
-                gravity: "top",
-                position: "right",
-                backgroundColor: "#22C55E",
-                className: "rounded-md shadow-md text-white",
-                stopOnFocus: true,
-                escapeMarkup: false
-            }).showToast();
-
-            setTimeout(() => {
-                window.location.href = "koperasi_desa_dashboard.html";
-            }, 1500);
-        });
-    </script>
-
-    <script>
         let currentCaptcha = '';
 
         function generateCaptcha(length = 5) {
-            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Hindari huruf ambigu
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
             let captcha = '';
             for (let i = 0; i < length; i++) {
                 captcha += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -170,40 +144,78 @@
             if (captchaEl) captchaEl.textContent = captcha;
         }
 
+        function showToast(message, type = 'error') {
+            const colors = {
+                error: '#EF4444',
+                success: '#22C55E',
+                warning: '#F97316'
+            };
+
+            Toastify({
+                text: `<span style="font-weight: 500;">${message}</span>`,
+                duration: 3000,
+                gravity: 'top',
+                position: 'center',
+                backgroundColor: colors[type] || '#EF4444',
+                className: "rounded-md shadow-md text-white",
+                stopOnFocus: true,
+                escapeMarkup: false,
+            }).showToast();
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             generateCaptcha();
 
-            const refreshBtn = document.getElementById('refreshCaptcha');
-            if (refreshBtn) {
-                refreshBtn.addEventListener('click', () => {
-                    console.log('Captcha di-refresh');
-                    generateCaptcha();
-                });
-            } else {
-                console.warn('Tombol refreshCaptcha tidak ditemukan di DOM');
-            }
+            document.getElementById('refreshCaptcha').addEventListener('click', generateCaptcha);
 
-            document.getElementById('signInBtn').addEventListener('click', function (e) {
-                const input = document.getElementById('captchaInput').value.trim().toUpperCase();
-                if (input !== currentCaptcha) {
-                    e.preventDefault();
-                    alert('Captcha salah. Silakan coba lagi.');
+            document.getElementById('masukButton').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
+                const captchaInput = document.getElementById('captchaInput').value.trim().toUpperCase();
+
+                if (!email) {
+                    showToast('Email tidak boleh kosong!', 'error');
+                    return;
+                }
+
+                if (!password) {
+                    showToast('Kata sandi tidak boleh kosong!', 'error');
+                    return;
+                }
+
+                if (!captchaInput) {
+                    showToast('Captcha wajib diisi!', 'error');
+                    return;
+                }
+
+                if (captchaInput !== currentCaptcha) {
+                    showToast('Captcha salah. Silakan coba lagi.', 'warning');
                     generateCaptcha();
+                    return;
+                }
+
+                const dummyEmail = 'admin@kopdes.id';
+                const dummyPassword = 'kopdes123';
+
+                if (email !== dummyEmail || password !== dummyPassword) {
+                    showToast('Email atau kata sandi salah!', 'error');
                     return;
                 }
 
                 Toastify({
                     text: `
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
-                    <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.627-5.373-12-12-12zm-1.2 17.4l-5.4-5.4 1.8-1.8 3.6 3.6 7.2-7.2 1.8 1.8-9 9z"/>
-                </svg>
-                <span style="font-weight: 500;">Selamat, Login berhasil!</span>
-            </div>
-        `,
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+                        <path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-6.627-5.373-12-12-12zm-1.2 17.4l-5.4-5.4 1.8-1.8 3.6 3.6 7.2-7.2 1.8 1.8-9 9z"/>
+                    </svg>
+                    <span style="font-weight: 500;">Selamat, Username dan Kata Sandi diterima. Login berhasil!</span>
+                </div>
+                `,
                     duration: 3000,
                     gravity: "top",
-                    position: "right",
+                    position: "center",
                     backgroundColor: "#22C55E",
                     className: "rounded-md shadow-md text-white",
                     stopOnFocus: true,
