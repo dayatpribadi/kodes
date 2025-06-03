@@ -39,19 +39,22 @@
 <body>
 
     <!-- Sign In -->
-    <div class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center px-4 md:px-8 lg:px-12 py-8"
-        style="background-image: url('https://images.unsplash.com/photo-1442544213729-6a15f1611937?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div class="min-h-screen bg-cover bg-center bg-no-repeat flex items-center justify-end px-4 md:px-8 lg:px-12 py-8"
+        style="background-image: url('assets/images/koperasi.png');">
         <div
-            class="bg-white dark:bg-[#0a0e19] shadow-xl rounded-xl w-[550px] p-[25px] mx-[20px] md:p-8 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
+            class="bg-glass border dark:bg-[#0a0e19] shadow-xl rounded-xl w-[550px] p-[25px] mx-[20px] md:p-8 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
             <div class="text-start mb-[25px]">
-                <img src="assets/images/kopdeskel.webp" width="200" alt="">
-                <h1 class="font-semibold text-lg md:text-2xl mt-[25px] text-black dark:text-white">
+                <div class="flex gap-4">
+                    <img src="assets/images/Logo_pemkab_oi.png" width="150" alt="">
+                    <img src="assets/images/kopdeskel.webp" width="200" alt="">
+                </div>
+                <h2 class="font-semibold text-lg md:text-xl mt-[25px] text-black dark:text-white">
                     Masuk Ke Akun Koperasi Desa/Kelurahan Merah Putih
-                </h1>
+                </h2>
             </div>
             <div class="mb-[15px] relative">
                 <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
-                    Email atau Username <span class="text-gray-300">(Dummy: admin@kopdes.id)</span>
+                    Email atau Username <span class="text-orange-500 font-light text-xs">(Dummy: admin@kopdes.id)</span>
                 </label>
                 <input type="text"
                     class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
@@ -59,7 +62,7 @@
             </div>
             <div class="mb-[15px] relative" id="passwordHideShow">
                 <label class="mb-[10px] md:mb-[12px] text-black dark:text-white font-medium block">
-                    Kata Sandi <span class="text-gray-300">(Dummy: kopdes123)</span>
+                    Kata Sandi <span class="text-orange-500 font-light text-xs">(Dummy: kopdes123)</span>
                 </label>
                 <input type="password"
                     class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500"
@@ -72,23 +75,23 @@
             </div>
             <div class="mb-[15px] relative">
                 <div
-                    class="flex items-center gap-4 mb-[10px] justify-center bg-gray-100 dark:bg-gray-800 rounded-md select-none">
+                    class="flex items-center gap-4 mb-[10px] text-white justify-center bg-gray-700 dark:bg-gray-800 rounded-md select-none">
                     <span id="captchaText" class="font-bold text-5xl px-[20px] py-8">
                         <!-- Akan diisi oleh JS -->
                     </span>
                     <button type="button" id="refreshCaptcha"
-                        class="text-2xl ml-[15px] text-primary-500 hover:underline">
+                        class="text-2xl ml-[15px] text-white hover:underline border-l border-gray-600 px-[20px]">
                         <i class="ri-reset-right-line"></i>
                     </button>
                 </div>
-                <label for="captcha" class="block mb-[15px] text-black dark:text-white font-medium">
+                <label for="captcha" class="block mb-[15px] text-center text-black dark:text-white font-medium">
                     Untuk menjamin keamanan, isikan kode di atas!
                 </label>
-                <input required type="text" id="captchaInput" placeholder="Masukkan angka di atas"
+                <input required type="text" id="captchaInput" placeholder="Masukkan kode di atas"
                     class="h-[35px] rounded-md text-black dark:text-white border border-gray-200 dark:border-[#172036] bg-white dark:bg-[#0c1427] px-[17px] block w-full outline-0 transition-all placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-primary-500" />
             </div>
             <button type="button" id="masukButton"
-                class="md:text-md block w-full text-center transition-all rounded-md font-medium mt-[20px] mb-[10px] md:mt-[25px] py-[12px] px-[25px] text-white bg-primary-500 hover:bg-primary-400">
+                class="md:text-sm block w-full text-center transition-all rounded-md font-medium mt-[20px] mb-[10px] md:mt-[25px] py-[10px] px-[25px] text-white bg-primary-500 hover:bg-primary-400">
                 <span class="flex items-center justify-center gap-[5px]">
                     <i class="material-symbols-outlined">
                         login
@@ -98,7 +101,7 @@
             </button>
 
             <a href="index.html" type="button"
-                class="md:text-md block w-full text-center transition-all rounded-md font-medium mb-[20px] py-[12px] px-[25px] text-gray-600 bg-gray-50 hover:bg-primary-400 hover:text-white dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
+                class="md:text-sm block w-full text-center transition-all rounded-md font-medium mb-[20px] py-[10px] px-[25px] text-gray-600 bg-gray-50 hover:bg-primary-400 hover:text-white dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">
                 <span class="flex items-center justify-center gap-[5px]">
                     <i class="material-symbols-outlined">
                         travel_explore
@@ -155,7 +158,7 @@
                 text: `<span style="font-weight: 500;">${message}</span>`,
                 duration: 3000,
                 gravity: 'top',
-                position: 'center',
+                position: 'right',
                 backgroundColor: colors[type] || '#EF4444',
                 className: "rounded-md shadow-md text-white",
                 stopOnFocus: true,
@@ -215,7 +218,7 @@
                 `,
                     duration: 3000,
                     gravity: "top",
-                    position: "center",
+                    position: "right",
                     backgroundColor: "#22C55E",
                     className: "rounded-md shadow-md text-white",
                     stopOnFocus: true,
