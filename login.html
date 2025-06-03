@@ -169,7 +169,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             generateCaptcha();
 
-            document.getElementById('refreshCaptcha').addEventListener('click', generateCaptcha);
+            // document.getElementById('refreshCaptcha').addEventListener('click', generateCaptcha);
+            document.getElementById('refreshCaptcha').addEventListener('click', function () {
+                console.log("Refresh Captcha clicked");
+                generateCaptcha();
+            });
 
             document.getElementById('masukButton').addEventListener('click', function (e) {
                 e.preventDefault();
