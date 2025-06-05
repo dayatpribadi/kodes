@@ -1040,6 +1040,7 @@ video {
   margin-right: 25px;
 }
 
+
 .mx-\[2px\] {
   margin-left: 2px;
   margin-right: 2px;
@@ -10083,6 +10084,11 @@ html[dir="rtl"] {
 @media (min-width: 1024px) {
   .lg\:-top-\[138px\] {
     top: -138px;
+  }
+
+  .lg\:mx-\[50px\] {
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .lg\:order-1 {
